@@ -1,1 +1,2 @@
 # 24-08-2024-Work
+SQL JOINS
