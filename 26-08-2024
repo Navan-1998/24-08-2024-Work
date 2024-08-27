@@ -1,1 +1,23 @@
+Show databases;
+Use besant;
+Select * from EMP;
+Select * from DEPT;
+#1.Find the Count of employees in each department-Usage of Common Expression Table.
+With EmployeeCount(DEPTNO,NUM_OF_EMPLOYEES)
+As
+(Select DEPTNO,Count(*) from EMP Group by DEPTNO)
+Select * from EmployeeCount;
 
+#.JOINS
+#.Cross JOins
+#.Employees decided to visit each others places,find the total visits.
+Select ENAME,LOC from DEPT Cross join EMP;
+
+#CASE Statements
+#Show Case names and Mark them as HNWI and LNWI with SAL=2500 as a boundary
+Select ENAME,SAL,
+Case
+	When SAL>2500 then "High Net Worth Individual"
+	Else "Low Net Worth Individual"
+END as Capacity_of_Individual
+from EMP;
